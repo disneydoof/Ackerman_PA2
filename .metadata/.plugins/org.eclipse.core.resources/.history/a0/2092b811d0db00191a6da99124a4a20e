@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class Decrypt {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		int num;
+		int one;
+		int two;
+		int three;
+		int four;
+		int tmp;
+		
+		num = scnr.nextInt();
+		
+		//Separating Digits Individually
+		one = num / 1000;
+		two = (num / 100) % 10;
+		three = (num % 100) / 10;
+		four = num % 10;
+				
+		if (one < 6) {
+			one = one + 3;
+		}
+		else {
+			one = one - 7;
+		}
+		
+		if (two < 6) {
+			two = two + 3;
+		}
+		else {
+			two = two - 7;
+		}
+		
+		if (three < 6) {
+			three = three + 3;
+		}
+		else {
+			three = three - 7;
+		}
+		
+		if (four < 6) {
+			four = four + 3;
+		}
+		else {
+			four = four - 7;
+		}
+		
+		tmp = one;
+		one = three;
+		three = tmp;
+		
+		tmp = two;
+		two = four;
+		four = tmp;
+		
+		System.out.print(one + "" + two + "" + three + "" + four);
+		
+		scnr.close();
+
+	}
+}

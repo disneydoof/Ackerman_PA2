@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Ackerman_p1 {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);		
+		int num;
+		int one;
+		int two;
+		int three;
+		int four;
+		
+		num = scnr.nextInt();
+		
+		one = num / 1000;
+		two = (num / 1000) / one;
+		four = num % 100;
+		three = (num % 100) / four;
+				
+		System.out.print(one + "" + two + "" + three + "" + four);
+		
+		scnr.close();
+
+	}
+
+}
