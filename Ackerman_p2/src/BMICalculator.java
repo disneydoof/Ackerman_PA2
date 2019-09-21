@@ -6,17 +6,20 @@ public class BMICalculator {
 		
 		Scanner scnr = new Scanner(System.in);
 		
+		//Variable Declarations
 		float height;
 		float weight;
 		int choice;
 		float bmi =0;
 		
+		//Initial Messages
 		System.out.println("Welcome to the BMI calculator.");
 		System.out.println("If you would like to measure in pounds and inches type (1).");
 		System.out.println("If you would like to measure in kilograms and meters type (2).");
 		
 		choice = scnr.nextInt();
 		
+		//If statements separating metric and imperial
 		if (choice == 1) {
 			System.out.println("Enter your weight in pounds.");
 			weight = scnr.nextFloat();
@@ -39,6 +42,7 @@ public class BMICalculator {
 			System.out.println("Please try again.");
 		}
 		
+		//If statements sorting out what users BMI is based off of calculations
 		if (bmi < 18.5) {
 			System.out.println("\nYour BMI is " + bmi + ". This means you are underweight.");
 		}
@@ -52,6 +56,7 @@ public class BMICalculator {
 			System.out.println("\nYour BMI is " + bmi + ". This means you are obese.");
 		}
 		
+		//Display of BMI categories
 		System.out.println("\nBMI Categories:");
 		System.out.println("Underweight = < 18.5");
 		System.out.println("Normal weight = 18.5 - 24.9");

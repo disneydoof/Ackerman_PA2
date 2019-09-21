@@ -5,6 +5,7 @@ public class Poll {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		
+		//Variable and String Declarations
 		int repeat = 1;
 		int numOfPeople = 0;
 		float average = 0;
@@ -18,9 +19,11 @@ public class Poll {
 		String[] topics= {"The Right to Bear Arms", "Freedom of Speech", "Freedom of the Press", "Freedom of Religion", "Freedom of Assembly"};
 		int[][] responses = new int[5][10];
 		
+		//Initial Messages
 		System.out.println("Welcome to the polling program, here we ask you to rate a series of topics based on importance.");
 		System.out.println("There will be 5 topics shown and you are allowed to rate each from 1 through 10");
 		
+		//Tally do while loop
 		do{
 			numOfPeople += 1;
 		for (int i = 0; i < 5; i++) {
@@ -33,11 +36,13 @@ public class Poll {
 		repeat = scnr.nextInt();
 		}while (repeat == 1);
 		
+		// Printing out results
 		System.out.println("                       1 2 3 4 5 6 7 8 9 10");
 		System.out.println("--------------------------------------------------------");
 		
 		for (int i = 0; i<5; i++) {
 			
+			//Neat Spacing
 			if (i==0) {
 				System.out.print(topics[i] + " ");
 			}
@@ -55,9 +60,11 @@ public class Poll {
 				count = count + ((responses[i][j]) * (j+1));
 			}
 			
+			//Calculating average
 			average = count / numOfPeople;
 			System.out.println("Average: " + average);
 			
+			//Comparing highest and lowest scores saved
 			if (count > highCountSaved) {
 				highCountSaved = count;
 				topicHighCount = i;
@@ -69,6 +76,7 @@ public class Poll {
 			count = 0;
 		}
 		
+		//Printing out lowest and highest
 		System.out.println("\nThe highest rated topic is " + topics[topicHighCount] + " with " + highCountSaved + " points.");
 		System.out.println("The lowest rated topic is " + topics[topicLowCount] + " with " + lowCountSaved + " points.");
 		
